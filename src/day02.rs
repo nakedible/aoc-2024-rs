@@ -14,6 +14,7 @@ fn parse_input(filename: &str) -> Vec<Vec<i64>> {
 }
 
 #[test_case("inputs/input-02.txt" => 534)]
+#[test_case("inputs/example-02-1.txt" => 2)]
 pub fn puzzle1(filename: &str) -> i64 {
     let reports = parse_input(filename);
     let mut ret = 0;
