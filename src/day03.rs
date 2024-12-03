@@ -33,31 +33,28 @@ pub fn puzzle2(filename: &str) -> i64 {
     let mut enabled = true;
     while ind < data.len() {
         if data[ind..].starts_with("don't()") {
-            enabled = false;
             ind += 7;
+            enabled = false;
         } else if data[ind..].starts_with("do()") {
-            enabled = true;
             ind += 4;
+            enabled = true;
         } else if enabled && data[ind..].starts_with("mul(") {
-            let Some(end) = data[ind + 4..].find(')') else {
-                ind += 4;
+            ind += 4;
+            let Some(end) = data[ind..].find(')') else {
                 continue;
             };
-            let Some((a, b)) = data[ind + 4..ind + 4 + end].split_once(',') else {
-                ind += 4;
+            let Some((a, b)) = data[ind..ind + end].split_once(',') else {
                 continue;
             };
             let Ok(a) = a.trim().parse::<i64>() else {
-                ind += 4;
                 continue;
             };
             let Ok(b) = b.trim().parse::<i64>() else {
-                ind += 4;
                 continue;
             };
             let res = a * b;
             sum += res;
-            ind += 4 + end;
+            ind += end;
         } else {
             ind += 1;
         }
