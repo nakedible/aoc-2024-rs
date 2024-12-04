@@ -8,6 +8,7 @@ fn parse_input(filename: &str) -> Matrix<char> {
 }
 
 #[test_case("inputs/input-04.txt" => 2297)]
+#[test_case("inputs/example-04-1.txt" => 18)]
 pub fn puzzle1(filename: &str) -> i64 {
     let input = parse_input(filename);
     let mut ret = 0;
@@ -41,6 +42,7 @@ pub fn puzzle1(filename: &str) -> i64 {
 }
 
 #[test_case("inputs/input-04.txt" => 1745)]
+#[test_case("inputs/example-04-1.txt" => 9)]
 pub fn puzzle2(filename: &str) -> i64 {
     let input = parse_input(filename);
     let mut hits = std::collections::HashMap::new();
