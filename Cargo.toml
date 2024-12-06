@@ -3,6 +3,9 @@ name = "aoc-2024-rs"
 version = "0.1.0"
 edition = "2021"
 
+[profile.release]
+debug = true
+
 [dependencies]
 pathfinding = "4.11.0"
 test-case = "*"
