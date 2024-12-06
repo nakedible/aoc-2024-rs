@@ -5,6 +5,8 @@ edition = "2021"
 
 [profile.release]
 debug = true
+codegen-units = 1
+lto = "fat"
 
 [dependencies]
 pathfinding = "4.11.0"
