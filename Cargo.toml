@@ -10,4 +10,5 @@ lto = "fat"
 
 [dependencies]
 pathfinding = "4.11.0"
+rayon = "1.10.0"
 test-case = "*"
