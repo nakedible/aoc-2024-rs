@@ -9,6 +9,7 @@ codegen-units = 1
 lto = "fat"
 
 [dependencies]
+itertools = "0.13.0"
 pathfinding = "4.11.0"
 rayon = "1.10.0"
 test-case = "*"
