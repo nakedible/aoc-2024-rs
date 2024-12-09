@@ -29,7 +29,6 @@ fn in_bounds(size: (isize, isize), pos: (isize, isize)) -> bool {
 #[test_case("inputs/example-08-1.txt" => 14)]
 pub fn puzzle1(filename: &str) -> i64 {
     let (size, mut nodes) = parse_input(filename);
-    println!("{:?}", size);
     nodes.sort();
     let mut seent = HashSet::new();
     for (_, poss) in &nodes.iter().chunk_by(|x| x.0) {
@@ -53,7 +52,6 @@ pub fn puzzle1(filename: &str) -> i64 {
 #[test_case("inputs/example-08-1.txt" => 34)]
 pub fn puzzle2(filename: &str) -> i64 {
     let (size, mut nodes) = parse_input(filename);
-    println!("{:?}", size);
     nodes.sort();
     let mut seent = HashSet::new();
     for (_, poss) in &nodes.iter().chunk_by(|x| x.0) {
