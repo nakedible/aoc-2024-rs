@@ -18,6 +18,10 @@ fn main() {
         || assert_eq!(day06::puzzle2("inputs/input-06.txt"), 1946),
         || assert_eq!(day07::puzzle1("inputs/input-07.txt"), 5540634308362),
         || assert_eq!(day07::puzzle2("inputs/input-07.txt"), 472290821152397),
+        || assert_eq!(day08::puzzle1("inputs/input-08.txt"), 354),
+        || assert_eq!(day08::puzzle2("inputs/input-08.txt"), 1263),
+        || assert_eq!(day09::puzzle1("inputs/input-09.txt"), 6299243228569),
+        || assert_eq!(day09::puzzle2("inputs/input-09.txt"), 6326952672104),
     ];
     fns.par_iter().for_each(|f| f());
 }
