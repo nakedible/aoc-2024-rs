@@ -1,9 +1,13 @@
-use test_case::test_case;
 use std::collections::HashMap;
+use test_case::test_case;
 
 fn parse_input(filename: &str) -> Vec<i64> {
     let input = std::fs::read_to_string(filename).unwrap();
-    input.trim().split(' ').map(|l| l.parse().unwrap()).collect()
+    input
+        .trim()
+        .split(' ')
+        .map(|l| l.parse().unwrap())
+        .collect()
 }
 
 //#[test_case(1234 => (12, 34))]
