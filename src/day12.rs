@@ -76,7 +76,10 @@ fn count_plot2(
                 continue;
             };
             if garden[neigh] == garden[pos] {
-                edges[(pos.0 * 3 + (1 + dir.0) as usize, pos.1 * 3 + (1 + dir.1) as usize)] = b' ';
+                edges[(
+                    pos.0 * 3 + (1 + dir.0) as usize,
+                    pos.1 * 3 + (1 + dir.1) as usize,
+                )] = b' ';
                 queue.push_back(neigh);
             }
         }
