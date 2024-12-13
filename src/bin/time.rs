@@ -22,6 +22,14 @@ fn main() {
         || assert_eq!(day08::puzzle2("inputs/input-08.txt"), 1263),
         || assert_eq!(day09::puzzle1("inputs/input-09.txt"), 6299243228569),
         || assert_eq!(day09::puzzle2("inputs/input-09.txt"), 6326952672104),
+        || assert_eq!(day10::puzzle1("inputs/input-10.txt"), 796),
+        || assert_eq!(day10::puzzle2("inputs/input-10.txt"), 1942),
+        || assert_eq!(day11::puzzle1("inputs/input-11.txt"), 218079),
+        || assert_eq!(day11::puzzle2("inputs/input-11.txt"), 259755538429618),
+        || assert_eq!(day12::puzzle1("inputs/input-12.txt"), 1396562),
+        || assert_eq!(day12::puzzle2("inputs/input-12.txt"), 844132),
+        || assert_eq!(day13::puzzle1("inputs/input-13.txt"), 36870),
+        || assert_eq!(day13::puzzle2("inputs/input-13.txt"), 78101482023732),
     ];
     fns.par_iter().for_each(|f| f());
 }
