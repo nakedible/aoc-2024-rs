@@ -32,6 +32,10 @@ fn main() {
         || assert_eq!(day13::puzzle2("inputs/input-13.txt"), 78101482023732),
         || assert_eq!(day14::puzzle1("inputs/input-14.txt", (103, 101)), 219512160),
         || assert_eq!(day14::puzzle2("inputs/input-14.txt", (103, 101)), 6398),
+        || assert_eq!(day15::puzzle1("inputs/input-15.txt"), 1383666),
+        || assert_eq!(day15::puzzle2("inputs/input-15.txt"), 1412866),
+        || assert_eq!(day16::puzzle1("inputs/input-16.txt"), 106512),
+        || assert_eq!(day16::puzzle2("inputs/input-16.txt"), 563),
     ];
     fns.par_iter().for_each(|f| f());
 }
