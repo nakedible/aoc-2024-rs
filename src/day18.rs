@@ -59,13 +59,17 @@ pub fn puzzle1(filename: &str, size: usize, count: usize) -> i64 {
 pub fn puzzle2(filename: &str, size: usize, count: usize) -> (i64, i64) {
     let bytes = parse_input(filename);
     let mut map = Matrix::new(size, size, b'.');
+    let mut prevpath = Vec::new();
     for i in 0..bytes.len() {
         let (x, y) = bytes[i];
         map[(y as usize, x as usize)] = b'#';
         if i < count {
             continue;
         }
-        if astar::astar(
+        if !prevpath.contains(&(x as usize, y as usize)) && !prevpath.is_empty() {
+            continue;
+        }
+        let Some((path, _)) = astar::astar(
             &(0, 0),
             |&(x, y)| {
                 let mut result = Vec::new();
@@ -85,11 +89,10 @@ pub fn puzzle2(filename: &str, size: usize, count: usize) -> (i64, i64) {
             },
             |&(x, y)| (size - x - 1) + (size - y - 1),
             |&(x, y)| x == size - 1 && y == size - 1,
-        )
-        .is_none()
-        {
+        ) else {
             return (x, y);
-        }
+        };
+        prevpath = path;
     }
     unreachable!()
 }
